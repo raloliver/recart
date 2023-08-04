@@ -1,0 +1,65 @@
+@import 'styles/breakpoints';
+
+.nav {
+  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr;
+  grid-template-areas: 'brand menu search shortcuts';
+  height: 100px;
+  padding: 0 120px;
+  position: absolute;
+  width: 100vw;
+  z-index: 1;
+  @media (max-width: $desktop) {
+    grid-template-areas:
+      'brand brand'
+      'menu shortcuts'
+      'search search';
+    grid-template-columns: 6fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    height: 200px;
+    justify-items: center;
+  }
+  @media (max-width: $mobile) {
+    padding: 0 50px;
+  }
+}
+
+.brand {
+  cursor: pointer;
+  grid-area: brand;
+}
+
+.menu {
+  grid-area: menu;
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+  @media (max-width: $desktop) {
+    justify-self: start;
+  }
+}
+
+.item {
+  color: white;
+  font-size: 22px;
+}
+
+.search {
+  align-items: center;
+  display: flex;
+  grid-area: search;
+  width: 100%;
+}
+
+.active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.shortcuts {
+  display: flex;
+  gap: 20px;
+  grid-area: shortcuts;
+  margin-left: 30px;
+}

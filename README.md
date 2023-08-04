@@ -1,70 +1,63 @@
-# Getting Started with Create React App
+# RECART - redux
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Classnames
 
-## Available Scripts
+`classnames` é um pacote para resolver classes condicionais. Por exemplo, imagine que você tenha uma classe chamada 'card-active', que só existirá se a variável `active` for true, como resolvemos isso sem e com classnames?
 
-In the project directory, you can run:
+**Sem classnames**
 
-### `npm start`
+```css
+<div className={active ? 'card-active' : ''}>
+</div>
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+**Com classnames**
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```css
+<div className={classNames({
+ 'card-active': active
+})}>
+</div>
+```
 
-### `npm test`
+### CSS Modules
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Resolve problemas de sobreposição de CSS. O pacote ao invés de trazer as classes de forma convencional, ele cria ids únicos para a classe (mesmo que as classes tenham o mesmo nome!), e isto impede de um CSS que não queremos sobrepor outro CSS!
 
-### `npm run build`
+**Sem CSS Modules**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```javascript
+import './Navbar.scss';
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+…
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<nav className='nav'>
+</nav>
+```
 
-### `npm run eject`
+Resultado:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```html
+<nav class="nav">…</nav>
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**Com CSS Modules**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```javascript
+import styles from './Navbar.module.scss';
+…
+<nav className={styles.nav}> … </nav>
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Resultado:
 
-## Learn More
+```html
+<nav class="Navbar_nav__VwSpp">…</nav>
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### JSConfig
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+O `baseUrl`, que diz que a pasta inicial para imports que **não vêm do `node_modules`** e sim que é o `src`, **não a pasta raiz do projeto**! Com isso não precisamos utilizar imports relativos (../../../).
 
-### Code Splitting
+Docs: https://code.visualstudio.com/docs/languages/jsconfig
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
