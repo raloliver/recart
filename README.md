@@ -61,3 +61,27 @@ O `baseUrl`, que diz que a pasta inicial para imports que **não vêm do `node_m
 
 Docs: https://code.visualstudio.com/docs/languages/jsconfig
 
+
+### Criar o estado da busca dentro do componente busca seria uma boa ideia?
+
+Como o componente é especificamente da busca, não seria errado ele ter esta responsabilidade, porém não conseguiríamos ver este estado do lado de fora do componente, então não, pois precisamos deste estado em um lugar acima para utilizar nas nossas páginas.
+
+Caso deseje controlar o input no componente, podemos utilizar o hook `useState()`, exemplo:
+
+```javascript
+const [search, setSearch] = useState('');
+
+…
+
+<input value={search} />
+```
+
+👆🏼 No exemplo acima, nós estaremos controlando o input, mas ele será considerado `read-only`, ou seja, ele não poderá mudar o próprio valor! Para isto, devemos também adicionar o evento de mudança (`onChange`) para armazenar o novo valor da busca nesta constante:
+
+```javascript
+<input value={search} onChange={element => setSearch(element.target.value)} />
+```
+
+👆🏼 Aqui controlamos o valor do input e na mudança do mesmo, este valor é guardado na constante `search`.
+
+

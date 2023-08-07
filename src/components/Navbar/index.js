@@ -3,6 +3,7 @@ import { RiShoppingCartFill, RiShoppingCart2Line } from 'react-icons/ri';
 
 import styles from './Navbar.module.scss';
 import { ReactComponent as Logo } from 'assets/logo.svg';
+import Search from 'components/Search';
 
 const iconProps = {
   color: 'white',
@@ -23,7 +24,9 @@ export default function Navbar() {
           Home
         </a>
       </div>
-      <div className={styles.search}></div>
+      <div className={styles.search}>
+        <Search />
+      </div>
       <div className={styles.shortcuts}>
         <a href="/cart">
           {window.location.pathname === '/cart' ? (
