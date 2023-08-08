@@ -85,3 +85,31 @@ const [search, setSearch] = useState('');
 👆🏼 Aqui controlamos o valor do input e na mudança do mesmo, este valor é guardado na constante `search`.
 
 
+### React Router DOM
+
+**BrowserRouter**
+Este componente faz com que se utilize o comportamento de mudança de rotas do browser (navegador), ou seja, com barras (como "/login" por exemplo).
+
+**Routes**
+Este componente diz que dentro dele terá uma ou várias rotas que serão analisadas, e a que se encaixar na estrutura que escolhemos (BrowserRouter) ela renderizará a rota.
+
+**Route**
+Este componente é uma representação de uma rota. Nele podemos dizer qual é a rota que aquele Route representa (path) e o componente correspondente (element).
+
+**Outlet**
+Ele é bem parecido com a propriedade children do React, mas ele concatena componentes gerais com componentes específicos. Nesse projeto temos o Navbar e o Footer na página, então eles seriam componentes gerais e o que aparece ao meio é o Outlet, e o componente que estiver dentro será determinado pelo componente Route.
+
+**Link**
+É um componente correspondente à tag <a> do HTML, mas ele não utiliza o redirecionamento do navegador, e sim da própria biblioteca.
+
+**useLocation**
+Um hook utilizado para pegar várias informações baseada no `location` do navegador, neste projetos utilizamos o `pathname`, que é a rota ativa no momento.
+
+**useParams**
+Um hook usado para identificar parâmetros na URL da página, normalmente utilizado em conjunto com o componente Route, colocando nele uma rota dinâmica chamada item/:id. No lugar deste :id existe uma identificação do item, e ela estará disponível dentro de `useParams`.
+
+**useNavigate**
+Um hook utilizado para navegar entre páginas.
+
+
+Documentação do react-router-dom: https://reactrouter.com/en/getting-started/overview

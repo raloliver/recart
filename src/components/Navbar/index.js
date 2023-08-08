@@ -6,7 +6,7 @@ import { ReactComponent as Logo } from 'assets/logo.svg';
 import Search from 'components/Search';
 
 const iconProps = {
-  color: 'white',
+  color: '#fff',
   size: 24,
 };
 
