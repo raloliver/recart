@@ -61,7 +61,6 @@ O `baseUrl`, que diz que a pasta inicial para imports que **não vêm do `node_m
 
 Docs: https://code.visualstudio.com/docs/languages/jsconfig
 
-
 ### Criar o estado da busca dentro do componente busca seria uma boa ideia?
 
 Como o componente é especificamente da busca, não seria errado ele ter esta responsabilidade, porém não conseguiríamos ver este estado do lado de fora do componente, então não, pois precisamos deste estado em um lugar acima para utilizar nas nossas páginas.
@@ -79,37 +78,46 @@ const [search, setSearch] = useState('');
 👆🏼 No exemplo acima, nós estaremos controlando o input, mas ele será considerado `read-only`, ou seja, ele não poderá mudar o próprio valor! Para isto, devemos também adicionar o evento de mudança (`onChange`) para armazenar o novo valor da busca nesta constante:
 
 ```javascript
-<input value={search} onChange={element => setSearch(element.target.value)} />
+<input
+  value={search}
+  onChange={(element) => setSearch(element.target.value)}
+/>
 ```
 
 👆🏼 Aqui controlamos o valor do input e na mudança do mesmo, este valor é guardado na constante `search`.
 
-
 ### React Router DOM
 
 **BrowserRouter**
+
 Este componente faz com que se utilize o comportamento de mudança de rotas do browser (navegador), ou seja, com barras (como "/login" por exemplo).
 
 **Routes**
+
 Este componente diz que dentro dele terá uma ou várias rotas que serão analisadas, e a que se encaixar na estrutura que escolhemos (BrowserRouter) ela renderizará a rota.
 
 **Route**
+
 Este componente é uma representação de uma rota. Nele podemos dizer qual é a rota que aquele Route representa (path) e o componente correspondente (element).
 
 **Outlet**
+
 Ele é bem parecido com a propriedade children do React, mas ele concatena componentes gerais com componentes específicos. Nesse projeto temos o Navbar e o Footer na página, então eles seriam componentes gerais e o que aparece ao meio é o Outlet, e o componente que estiver dentro será determinado pelo componente Route.
 
 **Link**
+
 É um componente correspondente à tag <a> do HTML, mas ele não utiliza o redirecionamento do navegador, e sim da própria biblioteca.
 
 **useLocation**
+
 Um hook utilizado para pegar várias informações baseada no `location` do navegador, neste projetos utilizamos o `pathname`, que é a rota ativa no momento.
 
 **useParams**
+
 Um hook usado para identificar parâmetros na URL da página, normalmente utilizado em conjunto com o componente Route, colocando nele uma rota dinâmica chamada item/:id. No lugar deste :id existe uma identificação do item, e ela estará disponível dentro de `useParams`.
 
 **useNavigate**
+
 Um hook utilizado para navegar entre páginas.
 
-
-Documentação do react-router-dom: https://reactrouter.com/en/getting-started/overview
+Documentação do react-router-dom: https://reactrouter.com/en/start/overview
