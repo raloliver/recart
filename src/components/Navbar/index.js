@@ -13,7 +13,7 @@ const iconProps = {
 export default function Navbar() {
   return (
     <nav className={styles.nav}>
-      <Logo className={styles.logo} />
+      <Logo className={styles.brand} />
       <div className={styles.menu}>
         <a
           href="/"

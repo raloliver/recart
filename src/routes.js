@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Page from 'components/Page';
+import Home from 'pages/Home';
 
 export default function Router() {
   return (
@@ -11,7 +12,7 @@ export default function Router() {
         >
           <Route
             index
-            element={<div>Router works!</div>}
+            element={<Home />}
           />
         </Route>
       </Routes>
