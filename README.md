@@ -137,3 +137,100 @@ React é one-way data binding, então não é possível enviar entre as rotas, s
 </div>
 
 _<p align="center">Prop Drilling</p>_
+
+### REDUX
+
+<div align="center">
+
+![Prop Drilling](https://onedrive.live.com/embed?resid=F3F3AE118D1DE0A%2158314&authkey=%21ACgASIn_dUlbA9E&width=727&height=451 'React - Redux - With and Without')
+
+</div>
+
+_<p align="center">React - Redux - With and Without</p>_
+
+<div align="center">
+
+![Prop Drilling](https://onedrive.live.com/embed?resid=F3F3AE118D1DE0A%2158315&authkey=%21APnP6yDytKDGD6o&width=510&height=361 'React - Redux - With and Without')
+
+</div>
+
+_<p align="center">React - Redux - Life Cycle</p>_
+
+### Redux Toolkit & React Redux
+
+`npm install @reduxjs/toolkit react-redux`
+
+O Redux Toolkit, criar a store, porém atenção que é necessário prover a store para os componentes. Quem se encarrega de fazer isso é um componente do próprio React Redux.
+
+Documentação @reduxjs/toolkit: https://redux-toolkit.js.org/tutorials/quick-start
+
+Reducers: pequenos pedações da Store.
+
+Com o Redux nós conseguimos ter todos os estados compartilhados entre componentes em um só lugar, reduzindo a complexidade de troca de informações e mudança de estado dentro do projeto!
+
+Utilize as bibliotecas `react-redux` e `@redux/toolkit` para criar um Store, um Slice com o nome desejado e com um initialState como um objeto vazio. Após isso, utilize o `Provider` para conectar o seu store com o projeto.
+
+**Action**
+
+Action é uma função que retorna um objeto (ou apenas o objeto). Este objeto contém obrigatoriamente um `type`, e opcionalmente contém um `payload`. O objeto representa uma ação que será feita em um `reducer`.
+
+**Dispatch**
+
+Dispatch é a ação de disparar uma `action`. A action sozinha é apenas um objeto com a 'assinatura' que o redux aceita, já o `dispatch` é uma função que oficializa que aquela `action` está sendo disparada para o redux.
+
+**Immer**
+
+Imutabilidade é o ato de você nunca mudar um dado. É uma técnica que permite que tenhamos um projeto muito mais performático, pois como o dado nunca é mudado, ou seja, no redux nunca retornamos um estado mudado, e sim um novo estado.
+
+**InitialState**
+
+InitialState é o estado inicial do reducer, ele é obrigatório e é usado como o primeiro ponto do estado antes das alterações que as actions disparadas farão.
+
+**Payload**
+
+Payload é o nome da propriedade dentro do objeto `action`. Dentro desta propriedade colocamos um ou mais argumentos que gostaríamos de utilizar dentro do reducer.
+
+**Provider**
+
+Provider é um componente da biblioteca `react-redux` que nos permite prover o Store para todos os componentes abaixo dele.
+
+**Reducer**
+
+Reducers são pequenos estados dentro do Store. Reducers são funções que aceitam um estado inicial e as actions como argumentos, e sempre retornam um novo estado.
+
+**Redux Toolkit**
+
+Redux Toolkit é uma biblioteca que facilita a criação de inúmeras coisas no Redux. Com ele, conseguimos criar Reducers abstratos utilizando Slices, que automaticamente cria actions para nós e consegue resolver os estados com imutabilidade de forma automática.
+
+**React Redux**
+
+React Redux nos permite utilizar o Redux dentro do React, nos provendo funções/componentes utilitárias(os) como o Provider, useDispatch e useSelector, por exemplo.
+
+**Slice**
+
+Slice é o termo usado pelo Redux Toolkit para se referir ao pedaço que criamos que corresponderá ao Reducer, as Actions e as Action types correspondentes àquele reducer. É criado com a função `createSlice` do Redux toolkit.
+
+**State**
+
+State é um termo relativo no Redux, mas a forma mais comum de ser utilizado é se referindo ao estado atual de um reducer. Dentro de `useSelector`, State representa o estado de todo o Store.
+
+**Store**
+
+Store é o estado total do Redux, com todos os reducers e algumas funções utilitárias como `getState()` e `dispatch()`. Normalmente `Store` é utilizado para se referir à variável store diretamente, nela não só temos o `state` de todo o Redux do projeto como também a algumas funções que existem dentro dela.
+
+**Type**
+
+Type é um identificador de uma `action` (convencionalmente uma string), que será utilizada pelo `reducer` para identificar aquela ação e saber o que fazer com ela. Se o type é `incrementar` dentro do `reducer` deve haver um tratamento para caso a action seja do tipo incrementar. Caso esteja utilizando Redux Toolkit, o type é criado automaticamente.
+
+**useDispatch**
+
+`useDispatch` é um hook da biblioteca `react-redux`, que nos permite disparar uma action.
+
+**useSelector**
+
+`useSelector` é um hook que nos permite acessar o `state` de toda a aplicação. Nele, você pode receber todo o estado de uma só vez ou pegar exatamente o que você precisa. O recomendado é que seja utilizado para filtrar exatamente o necessário para o seu componente atual, pois o seu componente fica 'conectado' ao estado entregue pelo `useSelector`, logo ele atualizará sempre que aquele estado mudar.
+
+**View**
+
+View é o nome que damos à parte de visualização, ou seja, todos os componentes que criamos.
+
