@@ -131,6 +131,9 @@ O React funciona assim desde que foi criado, e ele foi criado assim pois o que o
 React é one-way data binding, então não é possível enviar entre as rotas, só é possível compartilhar informações de cima para baixo através de `props`, o que não é uma boa prática, já que vamos gerar um problema chamado "prop drilling", que é precisarmos passar props em cima de props, em cima de props... o que deixa o código mais complexo de gerir.
 
 <div style="text-align: center;">
-![Prop Drilling](https://onedrive.live.com/embed?resid=F3F3AE118D1DE0A%2158313&authkey=%21AHdHiUy9jssFgAU&width=548&height=311 "Prop Drilling")
+
+![Prop Drilling](https://onedrive.live.com/embed?resid=F3F3AE118D1DE0A%2158313&authkey=%21AHdHiUy9jssFgAU&width=548&height=311 'Prop Drilling')
+
 </div>
-*<p style="text-align: center;">Prop Drilling</p>*
+
+_<p style="text-align: center;">Prop Drilling</p>_
