@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+
 import { MOCKED_CATEGORIES } from './categoriesData';
 
 const name = 'categories';

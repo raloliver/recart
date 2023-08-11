@@ -1,8 +1,9 @@
+import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+
 import Header from 'components/Header';
 import styles from './Home.module.scss';
 import imageExample from 'assets/image-example.png';
-import { useNavigate } from 'react-router-dom';
-import { useSelector } from 'react-redux';
 
 export default function Home() {
   const navigate = useNavigate();
