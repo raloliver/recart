@@ -122,16 +122,15 @@ Um hook utilizado para navegar entre páginas.
 
 Documentação do react-router-dom: https://reactrouter.com/en/start/overview
 
-
 ### One-Way Data Binding & Prop Drilling
 
-A responsabilidade do Router é controlar as rotas e saber o que é necessário renderizar. Então é preciso utilizar outra biblioteca para comunicar dados entre os componentes. 
+A responsabilidade do Router é controlar as rotas e saber o que é necessário renderizar. Então é preciso utilizar outra biblioteca para comunicar dados entre os componentes.
 
 O React funciona assim desde que foi criado, e ele foi criado assim pois o que o React mais preza é a performance e a facilidade. Two-Way data binding é uma forma também utilizada em outros frameworks, mas é muito fácil ocorrer quedas de performance e que mudemos estados de forma desnecessária, pois se o dado pode vir de qualquer lugar, quem que tem o controle sobre este estado?
 
 React é one-way data binding, então não é possível enviar entre as rotas, só é possível compartilhar informações de cima para baixo através de `props`, o que não é uma boa prática, já que vamos gerar um problema chamado "prop drilling", que é precisarmos passar props em cima de props, em cima de props... o que deixa o código mais complexo de gerir.
 
+<div style="text-align: center;">
 ![Prop Drilling](https://onedrive.live.com/embed?resid=F3F3AE118D1DE0A%2158313&authkey=%21AHdHiUy9jssFgAU&width=548&height=311 "Prop Drilling")
-
-
-
+</div>
+*<p style="text-align: center;">Prop Drilling</p>*
