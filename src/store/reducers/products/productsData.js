@@ -5,7 +5,7 @@ export const MOCKED_PRODUCTS = [
     image: 'https://source.unsplash.com/335x160/?Tuna',
     description:
       'The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive',
-    featured: true,
+    favorite: true,
     price: '934.00',
     category: 'Music',
   },
@@ -15,7 +15,7 @@ export const MOCKED_PRODUCTS = [
     image: 'https://source.unsplash.com/335x160/?Chair',
     description:
       'Carbonite web goalkeeper gloves are ergonomically designed to give easy fit',
-    featured: false,
+    favorite: false,
     price: '273.00',
     category: 'Grocery',
   },
@@ -25,7 +25,7 @@ export const MOCKED_PRODUCTS = [
     image: 'https://source.unsplash.com/335x160/?Ball',
     description:
       'The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design',
-    featured: true,
+    favorite: true,
     price: '204.00',
     category: 'Grocery',
   },
@@ -35,7 +35,7 @@ export const MOCKED_PRODUCTS = [
     image: 'https://source.unsplash.com/335x160/?Chips',
     description:
       'The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J',
-    featured: true,
+    favorite: true,
     price: '807.00',
     category: 'Grocery',
   },
@@ -45,7 +45,7 @@ export const MOCKED_PRODUCTS = [
     image: 'https://source.unsplash.com/335x160/?Soap',
     description:
       'Carbonite web goalkeeper gloves are ergonomically designed to give easy fit',
-    featured: false,
+    favorite: false,
     price: '748.00',
     category: 'Music',
   },
@@ -55,7 +55,7 @@ export const MOCKED_PRODUCTS = [
     image: 'https://source.unsplash.com/335x160/?Soap',
     description:
       'New ABC 13 9370, 13.3, 5th Gen CoreA5-8250U, 8GB RAM, 256GB SSD, power UHD Graphics, OS 10 Home, OS Office A & J 2016',
-    featured: true,
+    favorite: true,
     price: '203.00',
     category: 'Electronics',
   },
@@ -65,7 +65,7 @@ export const MOCKED_PRODUCTS = [
     image: 'https://source.unsplash.com/335x160/?Towels',
     description:
       'The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J',
-    featured: true,
+    favorite: true,
     price: '171.00',
     category: 'Electronics',
   },
@@ -75,7 +75,7 @@ export const MOCKED_PRODUCTS = [
     image: 'https://source.unsplash.com/335x160/?Bacon',
     description:
       'The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J',
-    featured: false,
+    favorite: false,
     price: '62.00',
     category: 'Computer Games',
   },
@@ -85,7 +85,7 @@ export const MOCKED_PRODUCTS = [
     image: 'https://source.unsplash.com/335x160/?Table',
     description:
       'Carbonite web goalkeeper gloves are ergonomically designed to give easy fit',
-    featured: true,
+    favorite: true,
     price: '183.00',
     category: 'Garden',
   },
@@ -95,7 +95,7 @@ export const MOCKED_PRODUCTS = [
     image: 'https://source.unsplash.com/335x160/?Towels',
     description:
       'Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals',
-    featured: false,
+    favorite: false,
     price: '875.00',
     category: 'Books',
   },
@@ -105,7 +105,7 @@ export const MOCKED_PRODUCTS = [
     image: 'https://source.unsplash.com/335x160/?Chicken',
     description:
       "Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles",
-    featured: true,
+    favorite: true,
     price: '138.00',
     category: 'Computer Games',
   },
@@ -115,7 +115,7 @@ export const MOCKED_PRODUCTS = [
     image: 'https://source.unsplash.com/335x160/?Fish',
     description:
       'The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design',
-    featured: true,
+    favorite: true,
     price: '470.00',
     category: 'Books',
   },

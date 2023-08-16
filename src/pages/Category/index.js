@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 
 import styles from './Category.module.scss';
 import Header from 'components/Header';
+import { Item } from 'components/Item';
 
 export default function Category() {
   const { guid } = useParams();
@@ -26,9 +27,10 @@ export default function Category() {
 
       <div className={styles.products}>
         {products?.map((product) => (
-          <div key={product.guid}>
-            <p>{product.name}</p>
-          </div>
+          <Item
+            key={product.guid}
+            {...product}
+          />
         ))}
       </div>
     </div>
