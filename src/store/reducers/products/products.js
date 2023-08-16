@@ -1,7 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+import { MOCKED_PRODUCTS } from './productsData';
+
 const name = 'products';
-const initialState = [];
+const initialState = MOCKED_PRODUCTS;
 
 const productsSlice = createSlice({
   name,

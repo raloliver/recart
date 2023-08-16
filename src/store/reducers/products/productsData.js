@@ -7,7 +7,7 @@ export const MOCKED_PRODUCTS = [
       'The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive',
     featured: true,
     price: '934.00',
-    category: 'Shoes',
+    category: 'Music',
   },
   {
     guid: '2a8d5d13-a7a0-4a95-9fc7-e3c062379773',
@@ -17,7 +17,7 @@ export const MOCKED_PRODUCTS = [
       'Carbonite web goalkeeper gloves are ergonomically designed to give easy fit',
     featured: false,
     price: '273.00',
-    category: 'Health',
+    category: 'Grocery',
   },
   {
     guid: '5e16671d-547d-4cb8-85d0-175dd184b82d',
@@ -37,7 +37,7 @@ export const MOCKED_PRODUCTS = [
       'The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J',
     featured: true,
     price: '807.00',
-    category: 'Garden',
+    category: 'Grocery',
   },
   {
     guid: '8f461a7e-2298-48df-b3c8-93f5bdfb4772',
@@ -47,7 +47,7 @@ export const MOCKED_PRODUCTS = [
       'Carbonite web goalkeeper gloves are ergonomically designed to give easy fit',
     featured: false,
     price: '748.00',
-    category: 'Home',
+    category: 'Music',
   },
   {
     guid: '6f400b86-ed7d-404d-93e1-15f4737d27a8',
@@ -57,7 +57,7 @@ export const MOCKED_PRODUCTS = [
       'New ABC 13 9370, 13.3, 5th Gen CoreA5-8250U, 8GB RAM, 256GB SSD, power UHD Graphics, OS 10 Home, OS Office A & J 2016',
     featured: true,
     price: '203.00',
-    category: 'Computers',
+    category: 'Electronics',
   },
   {
     guid: '281a9196-cf8b-470a-b668-091168c42aa2',
@@ -67,7 +67,7 @@ export const MOCKED_PRODUCTS = [
       'The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J',
     featured: true,
     price: '171.00',
-    category: 'Kids',
+    category: 'Electronics',
   },
   {
     guid: '8a1d8f97-2ad9-47b8-9156-e73ff1b120dc',
@@ -77,7 +77,7 @@ export const MOCKED_PRODUCTS = [
       'The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J',
     featured: false,
     price: '62.00',
-    category: 'Games',
+    category: 'Computer Games',
   },
   {
     guid: '118e8101-5c71-4030-9408-ed9b1cacb2a6',
@@ -97,7 +97,7 @@ export const MOCKED_PRODUCTS = [
       'Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals',
     featured: false,
     price: '875.00',
-    category: 'Shoes',
+    category: 'Books',
   },
   {
     guid: 'a9ffb5dd-70d9-4757-a4e5-5310bf3e832b',
@@ -107,7 +107,7 @@ export const MOCKED_PRODUCTS = [
       "Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles",
     featured: true,
     price: '138.00',
-    category: 'Games',
+    category: 'Computer Games',
   },
   {
     guid: '78107662-c449-4c9b-924c-3cc0772862f5',
@@ -117,6 +117,6 @@ export const MOCKED_PRODUCTS = [
       'The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design',
     featured: true,
     price: '470.00',
-    category: 'Baby',
+    category: 'Books',
   },
 ];

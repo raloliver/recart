@@ -6,9 +6,14 @@ import Header from 'components/Header';
 
 export default function Category() {
   const { guid } = useParams();
-  const category = useSelector((state) =>
-    state.categories.find((category) => category.guid === guid)
+  const categoryName = useSelector(
+    ({ categories }) =>
+      categories.find((category) => category.guid === guid).name
   );
+  const { category, products } = useSelector(({ categories, products }) => ({
+    category: categories.find((category) => category.guid === guid),
+    products: products.filter((product) => product.category === categoryName),
+  }));
 
   return (
     <div>
@@ -18,6 +23,14 @@ export default function Category() {
         image={category.cover}
         className={styles.header}
       />
+
+      <div className={styles.products}>
+        {products?.map((product) => (
+          <div key={product.guid}>
+            <p>{product.name}</p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
