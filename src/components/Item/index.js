@@ -1,6 +1,13 @@
-import { AiFillHeart, AiOutlineHeart, AiFillShopping, AiOutlineShopping} from 'react-icons/ai';
+import {
+  AiFillHeart,
+  AiOutlineHeart,
+  AiFillShopping,
+  AiOutlineShopping,
+} from 'react-icons/ai';
 
 import styles from './Item.module.scss';
+import { productsActions } from 'store/reducers/products/products';
+import { useDispatch } from 'react-redux';
 
 const iconProps = {
   color: '#197acf',
@@ -8,7 +15,12 @@ const iconProps = {
 };
 
 export function Item(props) {
-  const { name, image, price, description, favorite } = props;
+  const { name, image, price, description, favorite, guid } = props;
+  const dispatch = useDispatch();
+
+  function updateFavorite() {
+    dispatch(productsActions.updateFavorite(guid));
+  }
 
   return (
     <div className={styles.item}>
@@ -33,11 +45,13 @@ export function Item(props) {
                 {...iconProps}
                 color="#f21d56"
                 className={styles['item-action']}
+                onClick={updateFavorite}
               />
             ) : (
               <AiOutlineHeart
                 {...iconProps}
                 className={styles['item-action']}
+                onClick={updateFavorite}
               />
             )}
             {false ? (
