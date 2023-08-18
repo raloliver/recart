@@ -2,6 +2,7 @@ const { createSlice } = require('@reduxjs/toolkit');
 
 const initialState = [];
 
+const name = 'cart';
 const reducers = {
   updateCart: (state, { payload }) => {
     const isNotEmpty = state.some((product) => product.guid === payload);
@@ -21,7 +22,7 @@ const reducers = {
 };
 
 const cartSlice = createSlice({
-  name: 'cart',
+  name,
   initialState,
   reducers,
 });
