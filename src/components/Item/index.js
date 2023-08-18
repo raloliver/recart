@@ -7,7 +7,8 @@ import {
 
 import styles from './Item.module.scss';
 import { productsActions } from 'store/reducers/products/products';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { cartActions } from 'store/reducers/cart/cart';
 
 const iconProps = {
   color: '#197acf',
@@ -17,9 +18,16 @@ const iconProps = {
 export function Item(props) {
   const { name, image, price, description, favorite, guid } = props;
   const dispatch = useDispatch();
+  const isOnCart = useSelector((state) =>
+    state.cart.some((product) => product.guid === guid)
+  );
 
   function updateFavorite() {
     dispatch(productsActions.updateFavorite(guid));
+  }
+
+  function updateCart() {
+    dispatch(cartActions.updateCart(guid));
   }
 
   return (
@@ -54,15 +62,17 @@ export function Item(props) {
                 onClick={updateFavorite}
               />
             )}
-            {false ? (
+            {isOnCart ? (
               <AiFillShopping
                 {...iconProps}
                 className={styles['item-action']}
+                onClick={updateCart}
               />
             ) : (
               <AiOutlineShopping
                 {...iconProps}
                 className={styles['item-action']}
+                onClick={updateCart}
               />
             )}
           </div>

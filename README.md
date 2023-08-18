@@ -234,3 +234,24 @@ Type é um identificador de uma `action` (convencionalmente uma string), que ser
 
 View é o nome que damos à parte de visualização, ou seja, todos os componentes que criamos.
 
+
+### Immer e Imutabilidade
+
+Documentação (Writing Reducers with Immer): https://redux-toolkit.js.org/usage/immer-reducers
+
+**Por que Immer não aceita retornarmos o push do novo item no carrinho?**
+
+Porque o Immer espera um novo estado em um retorno. O Immer espera um novo estado caso você utilize o return, e retornar uma mudança não condiz com os padrões do Immer, por isso ele não aceita!
+
+**Por que não modificar e criar um novo state?**
+
+- A UI pode não reconhecer a mudança e não renderizar corretamente.
+- É mais difícil de entender de onde está vindo a mudança, pois uma variável mutável pode ser mudada de qualquer lugar que tenha acesso à ela.
+- É mais difícil escrever testes sobre ela.
+- É totalmente anti-pattern para o React, pois ele mesmo utiliza imutabilidade (com os estados, que só conseguem ser mudados via setStates), logo, é anti-pattern para o Redux também.
+
+**Como utilizar a Imutabilidade no Redux?**
+
+O @redux/toolkit utiliza a biblioteca Immer por debaixo dos panos, e a única coisa que devemos saber é como funciona a imutabilidade, e o redux toolkit lida com o resto!
+
+Na prática, podemos utilizar o push, só que para que isso aconteça, não devemos utilizar o return.
