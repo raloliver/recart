@@ -3,6 +3,8 @@ import {
   AiOutlineHeart,
   AiFillShopping,
   AiOutlineShopping,
+  AiFillPlusCircle,
+  AiFillMinusCircle,
 } from 'react-icons/ai';
 import classNames from 'classnames';
 
@@ -64,11 +66,17 @@ export function Item(props) {
               />
             )}
             {isOnCart ? (
-              <AiFillShopping
-                {...iconProps}
-                className={styles['item-action']}
-                onClick={updateCart}
-              />
+              <div className={styles.quantity}>
+                  Quantity:
+                  <AiFillMinusCircle {...iconProps} />
+                  <span>{String(0).padStart(2, '0')}</span>
+                  <AiFillPlusCircle {...iconProps} />
+                <AiFillShopping
+                  {...iconProps}
+                  className={styles['item-action']}
+                  onClick={updateCart}
+                />
+              </div>
             ) : (
               <AiOutlineShopping
                 {...iconProps}
