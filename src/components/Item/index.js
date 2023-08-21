@@ -66,11 +66,12 @@ export function Item(props) {
                 onClick={updateFavorite}
               />
             )}
-            {isOnCart ? (
+            {cart && (
               <div className={styles.quantity}>
                 Quantity:
                 <AiFillMinusCircle
                   {...iconProps}
+                  className={styles['item-action']}
                   onClick={() => {
                     if (quantity >= 1) {
                       dispatch(
@@ -82,16 +83,19 @@ export function Item(props) {
                 <span>{String(quantity || 0).padStart(2, '0')}</span>
                 <AiFillPlusCircle
                   {...iconProps}
+                  className={styles['item-action']}
                   onClick={() =>
                     dispatch(cartActions.updateQuantity({ guid, quantity: +1 }))
                   }
                 />
-                <AiFillShopping
-                  {...iconProps}
-                  className={styles['item-action']}
-                  onClick={updateCart}
-                />
               </div>
+            )}
+            {isOnCart ? (
+              <AiFillShopping
+                {...iconProps}
+                className={styles['item-action']}
+                onClick={updateCart}
+              />
             ) : (
               <AiOutlineShopping
                 {...iconProps}
