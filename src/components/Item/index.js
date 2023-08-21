@@ -19,7 +19,8 @@ const iconProps = {
 };
 
 export function Item(props) {
-  const { name, image, price, description, favorite, guid, cart } = props;
+  const { name, image, price, description, favorite, guid, cart, quantity } =
+    props;
   const dispatch = useDispatch();
   const isOnCart = useSelector((state) =>
     state.cart.some((product) => product.guid === guid)
@@ -67,10 +68,24 @@ export function Item(props) {
             )}
             {isOnCart ? (
               <div className={styles.quantity}>
-                  Quantity:
-                  <AiFillMinusCircle {...iconProps} />
-                  <span>{String(0).padStart(2, '0')}</span>
-                  <AiFillPlusCircle {...iconProps} />
+                Quantity:
+                <AiFillMinusCircle
+                  {...iconProps}
+                  onClick={() => {
+                    if (quantity >= 1) {
+                      dispatch(
+                        cartActions.updateQuantity({ guid, quantity: -1 })
+                      );
+                    }
+                  }}
+                />
+                <span>{String(quantity || 0).padStart(2, '0')}</span>
+                <AiFillPlusCircle
+                  {...iconProps}
+                  onClick={() =>
+                    dispatch(cartActions.updateQuantity({ guid, quantity: +1 }))
+                  }
+                />
                 <AiFillShopping
                   {...iconProps}
                   className={styles['item-action']}

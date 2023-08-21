@@ -19,6 +19,15 @@ const reducers = {
 
     return state.filter((product) => product.guid !== payload);
   },
+  updateQuantity: (state, { payload }) => {
+    state = state.map((productOnCart) => {
+      if (productOnCart.guid === payload.guid) {
+        productOnCart.quantity += payload.quantity;
+      }
+
+      return productOnCart;
+    });
+  },
 };
 
 const cartSlice = createSlice({

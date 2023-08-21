@@ -31,21 +31,17 @@ export default function Cart() {
         {cart.map((product) => (
           <Item
             key={product.guid}
-            cart
             {...product}
+            cart
           />
         ))}
 
         <div className={styles.total}>
-            <strong>
-                Resume:
-            </strong>
-            <strong>
-                Subtotal: 
-                <strong>
-                    $ 0.0
-                </strong>
-            </strong>
+          <strong>Resume:</strong>
+          <strong>
+            Subtotal:
+            <strong>$ 0.0</strong>
+          </strong>
         </div>
       </div>
     </div>
