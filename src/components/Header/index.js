@@ -7,12 +7,14 @@ export default function Header({ title, description, className = '', image }) {
         <h1>{title}</h1>
         <h2>{description}</h2>
       </div>
-      <div className={styles['header-image']}>
-        <img
-          alt={title}
-          src={image}
-        />
-      </div>
+      {image ? (
+        <div className={styles['header-image']}>
+          <img
+            alt={title}
+            src={image}
+          />
+        </div>
+      ) : null}
     </header>
   );
 }
