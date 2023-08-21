@@ -11,10 +11,19 @@ export default function Category() {
     ({ categories }) =>
       categories.find((category) => category.guid === guid).name
   );
-  const { category, products } = useSelector(({ categories, products }) => ({
-    category: categories.find((category) => category.guid === guid),
-    products: products.filter((product) => product.category === categoryName),
-  }));
+  const { category, products } = useSelector(
+    ({ categories, products, search }) => {
+      const searchValue = new RegExp(search, 'i');
+
+      return {
+        category: categories.find((category) => category.guid === guid),
+        products: products.filter(
+          (product) =>
+            product.category === categoryName && product.name.match(searchValue)
+        ),
+      };
+    }
+  );
 
   return (
     <div>
