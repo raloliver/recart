@@ -9,6 +9,7 @@ export default function Cart() {
   const dispatch = useDispatch();
   const { cart, total } = useSelector((state) => {
     let subTotal = 0;
+    const searchValue = new RegExp(state.search, 'i');
     const cartReduce = state.cart.reduce((products, productOnCart) => {
       const product = state.products.find(
         (product) => product.guid === productOnCart.guid
@@ -16,10 +17,12 @@ export default function Cart() {
 
       subTotal += product.price * productOnCart.quantity;
 
-      products.push({
-        ...product,
-        quantity: productOnCart.quantity,
-      });
+      if (product.name.match(searchValue)) {
+        products.push({
+          ...product,
+          quantity: productOnCart.quantity,
+        });
+      }
 
       return products;
     }, []);
