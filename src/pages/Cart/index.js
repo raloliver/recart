@@ -31,6 +31,7 @@ export default function Cart() {
         {cart.map((product) => (
           <Item
             key={product.guid}
+            cart
             {...product}
           />
         ))}

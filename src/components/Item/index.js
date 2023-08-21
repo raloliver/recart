@@ -4,6 +4,7 @@ import {
   AiFillShopping,
   AiOutlineShopping,
 } from 'react-icons/ai';
+import classNames from 'classnames';
 
 import styles from './Item.module.scss';
 import { productsActions } from 'store/reducers/products/products';
@@ -16,7 +17,7 @@ const iconProps = {
 };
 
 export function Item(props) {
-  const { name, image, price, description, favorite, guid } = props;
+  const { name, image, price, description, favorite, guid, cart } = props;
   const dispatch = useDispatch();
   const isOnCart = useSelector((state) =>
     state.cart.some((product) => product.guid === guid)
@@ -31,7 +32,7 @@ export function Item(props) {
   }
 
   return (
-    <div className={styles.item}>
+    <div className={classNames(styles.item, { [styles['item-cart']]: cart })}>
       <div className={styles['item-image']}>
         <img
           src={image}
