@@ -5,11 +5,14 @@ import styles from './Cart.module.scss';
 import { Item } from 'components/Item';
 
 export default function Cart() {
-  const cart = useSelector((state) => {
+  const { cart, total } = useSelector((state) => {
+    let subTotal = 0;
     const cartReduce = state.cart.reduce((products, productOnCart) => {
       const product = state.products.find(
         (product) => product.guid === productOnCart.guid
       );
+
+      subTotal += product.price * productOnCart.quantity;
 
       products.push({
         ...product,
@@ -19,7 +22,10 @@ export default function Cart() {
       return products;
     }, []);
 
-    return cartReduce;
+    return {
+      cart: cartReduce,
+      total: subTotal,
+    };
   });
   return (
     <div>
@@ -40,7 +46,7 @@ export default function Cart() {
           <strong>Resume:</strong>
           <strong>
             Subtotal:
-            <strong>$ 0.0</strong>
+            <strong>$ {total.toFixed(2)}</strong>
           </strong>
         </div>
       </div>
