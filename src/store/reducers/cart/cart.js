@@ -28,6 +28,7 @@ const reducers = {
       return productOnCart;
     });
   },
+  resetCart: () => initialState,
 };
 
 const cartSlice = createSlice({

@@ -1,10 +1,12 @@
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import Header from 'components/Header';
 import styles from './Cart.module.scss';
 import { Item } from 'components/Item';
+import { cartActions } from 'store/reducers/cart/cart';
 
 export default function Cart() {
+  const dispatch = useDispatch();
   const { cart, total } = useSelector((state) => {
     let subTotal = 0;
     const cartReduce = state.cart.reduce((products, productOnCart) => {
@@ -27,6 +29,7 @@ export default function Cart() {
       total: subTotal,
     };
   });
+
   return (
     <div>
       <Header
@@ -49,6 +52,12 @@ export default function Cart() {
             <strong>$ {total.toFixed(2)}</strong>
           </strong>
         </div>
+        <button
+          className={styles.reset}
+          onClick={() => dispatch(cartActions.resetCart())}
+        >
+          Reset
+        </button>
       </div>
     </div>
   );
